@@ -43,8 +43,6 @@ class App extends React.Component {
   }
 
   login = async (event) => {
-
-    console.log('login kutsuttu')
     event.preventDefault()
     try {
       const user = await loginService.login({
@@ -71,7 +69,6 @@ class App extends React.Component {
   }
 
   logout = async () => {
-    console.log('logout kutsuttu')
     window.localStorage.removeItem('loggedBlogappUser')
     this.setState({
       user: null
@@ -106,12 +103,9 @@ class App extends React.Component {
 
 
   addLikes = (blogObject) => async () => {
-    console.log('here')
     const blog = this.state.blogs.find(blog => blog.id === blogObject.id)
-    console.log('blog is ', blog)
     const id = blog.id
     const changedBlog = { ...blog, likes: blog.likes + 1 }
-    console.log('changedBlog is ', changedBlog)
     await blogService.update(id, changedBlog)
     const blogs = this.state.blogs.filter(blog => blog.id !== id)
     this.setState({
