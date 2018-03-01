@@ -31,6 +31,7 @@ class Blog extends React.Component {
       correctUser = true
     }
     let showUser = ''
+    
     if (this.props.blog.user !== undefined) {
       showUser = this.props.blog.user.name
       if(this.props.blog.user.username === this.props.user.username) {
