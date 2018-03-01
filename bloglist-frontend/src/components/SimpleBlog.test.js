@@ -14,10 +14,10 @@ describe.only('<SimpleBlog />', () => {
         }
 
         const blogComponent = shallow(<SimpleBlog blog={blog} />)
-       // console.log(blogComponent.debug())
+        console.log(blogComponent.debug())
 
         const contentDiv = blogComponent.find('.details')
-        //console.log(contentDiv.debug())
+        console.log(contentDiv.debug())
 
         expect(contentDiv.text()).toContain(blog.title)
     })
@@ -37,7 +37,7 @@ describe.only('<SimpleBlog />', () => {
             blog={blog}
             onClick={mockHandler} />
         )
-       // console.log(blogComponent.debug())
+        console.log(blogComponent.debug())
 
         const button = blogComponent.find('button')
         button.simulate('click')
